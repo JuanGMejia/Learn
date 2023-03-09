@@ -1,0 +1,8 @@
+<nav>
+    <!-- directivas Estructurales - Atributo Comportamiento -->
+    <ul class="nav-content">
+        <ol *ngFor="let navLink of navLinks">
+            <a *ngIf="navLink.isActive" (click)="onClickNavLink.emit()" [routerLink]="navLink.route">{{navLink.name}}</a>
+        </ol>
+    </ul>
+</nav>

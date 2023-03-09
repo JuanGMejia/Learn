@@ -1,0 +1,10 @@
+<header>
+    <span>{{ title | lower }}</span>
+    <span>{{ title }}</span>
+    <learn-nav-bar
+        [navLinks]="links"
+        [active]="false"
+        (onClickNavLink)="onClick()">
+    </learn-nav-bar>
+    <button (click)="changeLinks()">Change Links</button>
+</header>
