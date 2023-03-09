@@ -10,11 +10,15 @@ import { ILaunch } from '../interfaces/launch.interface';
 })
 export class LaunchService {
   private counter = 0;
+  readonly baseUrl = 'https://api.spacexdata.com/v3/';
   counter$: Subject<number> = new Subject();
   constructor(private http: HttpClient) {}
 
   getLaunches() {
-    return this.http.get<ILaunch[]>('https://api.spacexdata.com/v3/launches');
+    return this.http.get<ILaunch[]>(`${this.baseUrl}launches`);
+  }
+  getLaunchById = (flightNumber: number) => {
+    return this.http.get<ILaunch>(`${this.baseUrl}launches/${flightNumber}`);
   }
 
   nextCount() {

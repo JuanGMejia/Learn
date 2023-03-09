@@ -1,8 +1,19 @@
 :host {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-    color: white;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     width: 350px;
-    height: 250px;
+    height: 350px;
     margin-bottom: 10px;
+    border: solid 1px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.img {
+    width: 50%;
+}
+
+.detail {
+    overflow: scroll;
 }

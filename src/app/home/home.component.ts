@@ -39,12 +39,11 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.launchCounterNoAsync = newCount;
       console.log('newCount:', newCount);
     });
-    this.launches$ = this.launchService.getLaunches();
   }
 
   ngOnDestroy(): void {
     this.destroy$.next(true);
     this.destroy$.complete();
-    this.launchSubscription.unsubscribe();
+    // this.launchSubscription.unsubscribe();
   }
 }

@@ -26,14 +26,9 @@ export class NavBarComponent implements OnInit, OnChanges, DoCheck {
           isActive: true
         },
         {
-          name: 'Characters',
-          route: '/characters',
+          name: 'launches',
+          route: '/launches',
           isActive: true
-        },
-        {
-          name: 'Restaurant',
-          route: '/restaurant',
-          isActive: false
         }
       ];
     }

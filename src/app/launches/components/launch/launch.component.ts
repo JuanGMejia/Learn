@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ILaunch } from '../../interfaces/launch.interface';
 import { LaunchService } from '../../services/launch.service';
 
@@ -9,7 +10,7 @@ import { LaunchService } from '../../services/launch.service';
 })
 export class LaunchComponent implements OnInit {
 
-  constructor(private l: LaunchService) {}
+  constructor(private l: LaunchService, private router: Router) {}
 
   @Input() launch: ILaunch;
 
@@ -17,5 +18,9 @@ export class LaunchComponent implements OnInit {
     setTimeout(() => {
       this.l.nextCount();
     }, 2000);
+  }
+
+  goToDetail() {
+    this.router.navigateByUrl(`launches/${this.launch.flight_number}`)
   }
 }

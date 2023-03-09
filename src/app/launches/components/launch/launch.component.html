@@ -1,3 +1,4 @@
+<img [src]="launch.links.mission_patch" class="img">
 <p>Mission: {{launch.mission_name}}</p>
-<p>Detail: {{launch.details}}</p>
-
+<button (click)="goToDetail()">Go To Detail</button>
+<p class="detail">Detail: {{launch.details}}</p>

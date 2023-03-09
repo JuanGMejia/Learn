@@ -6,10 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
-import { CharactersComponent } from './characters/characters.component';
 import { LowerPipe } from './pipes/lower.pipe';
-import { LaunchModule } from './launches/launch.module';
-import { LaunchService } from './launches/services/launch.service';
 
 
 const routes: Routes = [
@@ -18,8 +15,8 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'characters',
-    component: CharactersComponent
+    path: 'launches',
+    loadChildren: () => import('./launches/launch.module').then(m => m.LaunchModule)
   }
 ];
 
@@ -29,7 +26,6 @@ const routes: Routes = [
     HeaderComponent,
     NavBarComponent,
     HomeComponent,
-    CharactersComponent,
     LowerPipe
     // componentes, pipes, directivas
   ],
@@ -37,7 +33,6 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    LaunchModule
     // modules
   ],
   exports:[],
