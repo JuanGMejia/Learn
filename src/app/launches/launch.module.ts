@@ -5,11 +5,16 @@ import { LaunchesComponent } from './components/launches/launches.component';
 import { Route, RouterModule } from '@angular/router';
 import { LowerPipe } from '../pipes/lower.pipe';
 import { CommonModule } from '@angular/common';
+import { ModelComponent } from './components/model/model.component';
 
 const routes: Route[] = [
     {
         path: '',
         component: LaunchesComponent
+    },
+    {
+        path: 'model',
+        component: ModelComponent
     },
     {
         path: ':flight_number',
@@ -25,7 +30,10 @@ const routes: Route[] = [
         LaunchComponent,
         LaunchDetailComponent,
         LaunchesComponent,
-        LowerPipe
-    ]
+        LowerPipe,
+        ModelComponent
+    ],
+    exports: [LowerPipe]
 })
 export class LaunchModule {};
+
